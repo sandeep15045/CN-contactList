@@ -1,9 +1,12 @@
-var http = require('http');
+const http= require('http')
+const port=8000;
 
-http.createServer(function (req) {
-    if(req){
-        console.log(req);
+const server=http.createServer();
+server.listen(port,function(err){
+    if(err){
+        console.log(err);
         return;
     }
-    console.log("server running on port: ",port)    
-}).listen(8000);
+    //importtant-> differnet way of writing port:
+    console.log("server running ${{port}} on port : ",`port is ${port} `,port);
+});
