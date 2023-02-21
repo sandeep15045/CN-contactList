@@ -1,4 +1,8 @@
-const operation= require('./operation')
+const agrs =process.argv;
+console.log(agrs);
 
-const agrs=process.argv.slice(2);
-console.log(operation.add(parseInt(agrs[0]),parseInt(agrs[1])));
+const b = process.argv;
+console.log(b);
+const [a] = process.argv;
+console.log(a[0],a[1],a[2]); // node
+
