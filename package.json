@@ -1,0 +1,19 @@
+{
+  "name": "nodebackend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sandeep15045/nodebackend.git"
+  },
+  "author": "sandeep kumar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sandeep15045/nodebackend/issues"
+  },
+  "homepage": "https://github.com/sandeep15045/nodebackend#readme"
+}
