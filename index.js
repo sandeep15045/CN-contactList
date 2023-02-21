@@ -3,6 +3,7 @@ const port=8000;
 
 function requestHandler(req,res){
     console.log(req.url)
+    res.writeHead(200,{'content-type':'text/html'});
     res.end('gotcha')
 }
 const server=http.createServer(requestHandler);
