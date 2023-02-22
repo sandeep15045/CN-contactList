@@ -25,7 +25,12 @@ app.get('/',function(req,res){
     });
     
 })
+app.post('/create',function(req,res){
+    
+    return res.redirect('/');
 
+
+})
 app.listen(port,function(err){
     if(err)
     {
