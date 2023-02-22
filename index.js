@@ -3,6 +3,7 @@ const port=8000;
 const path=require('path');
 const app=express();
 const db = require('./config/mongoose');
+const Contact = require('./models/user');
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
 app.use(express.urlencoded());
@@ -29,14 +30,15 @@ app.get('/',function(req,res){
     
 })
 app.post('/create',function(req,res){
-    // contactList.push({
-    //     name:req.body.first_name,
-    //     number:req.body.number
-    // })
-
-    contactList.push(req.body);
-    return res.redirect('/');
-
+   
+    Contact.create(req.body,function(err,newContact){
+        if(err){
+            console.log('error in creating db', err);
+            return;
+        }
+        console.log('db created',newContact)
+        return res.redirect('back')
+    })
 
 })
 app.get('/delete-contact/',function(req,res){
