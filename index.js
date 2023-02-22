@@ -4,7 +4,21 @@ const fs=require('fs');
 
 function requestHandler(req,res){
     console.log(req.url);
-    fs.readFile('./index.html',function(err,data){
+
+    res.writeHead(200,{'content-type':'text/html'});
+    let filepath;
+    switch(req.url){
+        case '/':
+            filepath='./index.html'
+            break;
+        case '/profile':
+            filepath='./profile.html'
+            break;
+        default:
+            filepath='./404.html'
+    }
+    
+    fs.readFile(filepath,function(err,data){
         if(err)
         {
             console.log('error',err);
