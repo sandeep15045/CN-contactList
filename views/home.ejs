@@ -2,3 +2,34 @@
 <title>
     <%=title%>
 </title>
+<body>
+    <h1>contactlist</h1>
+    <p><%=contact_list[0]%></p>
+    <p><%=contact_list[0]%></p>
+     <section>
+        <ul>
+            <% contact_list.forEach(function( i){ %>
+                <li> <%= i.name %>  <%= i.number %> </li>
+            <% }) %> 
+        </ul>
+    </section>
+    <section>
+        <ul> 
+            <% contact_list.map((i)=>{ %>
+              <li>
+                  <%= i.number %>
+              </li>
+            <% }) %>
+           </ul>
+    </section>
+
+    <section>
+        <ul>
+           <% for ( let  i of contact_list){ %>
+                <li><%=i.name%></li>
+                <li><%=i.number%></li>
+            <%}%>
+        </ul>
+    </section>
+
+</body>
