@@ -4,6 +4,8 @@ const path=require('path');
 const app=express();
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname,'views'));
+app.use(express.urlencoded());
+
 var contactList=[
     {
         name:"sandeep",
@@ -26,7 +28,12 @@ app.get('/',function(req,res){
     
 })
 app.post('/create',function(req,res){
-    
+    // contactList.push({
+    //     name:req.body.first_name,
+    //     number:req.body.number
+    // })
+
+    contactList.push(req.body);
     return res.redirect('/');
 
 
