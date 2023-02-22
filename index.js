@@ -37,12 +37,16 @@ app.post('/create',function(req,res){
 
 })
 app.get('/delete-contact/',function(req,res){
-    let number= req.query.number
-    let index = contactList.findIndex(contact=>contact.number==number);
-    if(index!=-1)
-    {
-        contactList.splice(index,1)
-    }return res.redirect('back')
+
+    let id= req.query.id;
+    Contact.findByIdAndDelete(id,function(err){
+        if(err){
+            console.log('error in deleting db',err);
+            return;
+        }
+        return res.redirect('back')
+    })
+
 
 
 })
