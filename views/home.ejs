@@ -1,5 +1,6 @@
-<h1>home ejs</h1>
+
 <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/css/home.css">
 </head>
 <title>
@@ -7,7 +8,7 @@
     
 </title>
 <body>
-    <h1>contactlist</h1>
+
     <p><%=contact_list[0]%></p>
     <p><%=contact_list[0]%></p>
      <section>
@@ -26,16 +27,31 @@
             <% }) %>
            </ul>
     </section>
+    <h1><i class="fas fa-address-book"></i>This is contact list</h1>
 
-    <section>
-        <ul>
-           <% for ( let  i of contact_list){ %>
-                <li><%=i.name%></li>
-                <li><%=i.number%></li>
-            <%}%>
-        </ul>
-    </section>
 
+    <div>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Phone number</th>
+                <th>Remove </th>
+            </tr>
+            <% for(let i of contact_list){%>
+                <tr>
+                    <td>
+                        <%=i.name%>
+                    </td>
+                    <td>
+                        <%=i.number%>
+                    </td>
+                    <td>
+                        <a href="/delete-contact/<%=i.number%>">delete</a>
+                    </td>
+                </tr>
+                <%} %>
+        </table>
+    </div>
 
      <div class="input">
         <form action="/create" method="POST">
