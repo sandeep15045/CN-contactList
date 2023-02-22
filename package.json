@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sandeep15045/nodebackend/issues"
   },
-  "homepage": "https://github.com/sandeep15045/nodebackend#readme"
+  "homepage": "https://github.com/sandeep15045/nodebackend#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
